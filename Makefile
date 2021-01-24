@@ -1,8 +1,8 @@
 client: clean
-	gcc -lcurses ./src/client/client.c -o ./client
+	gcc -lcurses ./src/client/client.c ./src/client/helper.c ./src/client/connection.c -o ./termchat
 
-run_client: client
-	./client
+test_client: client
+	./termchat testserver.com testroom tester
 
 clean:
-	rm -f client server
+	rm -f termchat server
