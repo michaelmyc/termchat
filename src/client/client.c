@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
   int abs_cursor = 0;
   int input_cursor = 0;
   int input_win_start = 0;
-  int curr_line = 0;
+  // int curr_line = 0;
   char input_str[MSG_LIMIT+1] = "";
   char line[MSG_LIMIT];
 
