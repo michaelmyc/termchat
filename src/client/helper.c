@@ -1,4 +1,5 @@
 #include "helper.h"
+#include <unistd.h>
 
 void get_input_str(char output[], char input[], int len, int start) {
   if (len < COLS) {
@@ -20,6 +21,12 @@ void get_input_str(char output[], char input[], int len, int start) {
 }
 
 int get_win_start(int len, int abs_pos, int prev_start) {
+  if (abs_pos == 0 || len < COLS) {
+    return 0;
+  }
+  if (abs_pos == len) {
+    return len - COLS + 1;
+  }
   if (prev_start > 0 && abs_pos - prev_start < 2) {
     return prev_start - 1;
   }
